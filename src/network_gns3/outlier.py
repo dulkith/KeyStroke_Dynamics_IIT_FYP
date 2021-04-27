@@ -1,16 +1,13 @@
 import pandas as pd
 
-
 def value_above_thresh(row):
     for r in row:
         if r >= 10:
             print(row)
             break
 
-
 data = pd.read_csv("data_over_network_0_latency_0_jitter.csv")
 data = data[data.columns.drop(['Unnamed: 0', 'subject'])]
-
 
 def load_dataset(name):
     data = pd.read_csv(name)
@@ -29,7 +26,6 @@ def load_dataset(name):
         data = data[data.columns.drop(['Unnamed: 0'])]
 
     return data
-
 
 # Original dataset
 data = load_dataset("dataset.csv")

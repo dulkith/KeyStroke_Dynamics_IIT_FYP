@@ -6,7 +6,6 @@ import socket
 SERVER = '127.0.0.1'
 PORT = 7002
 
-
 def select_char(name):
     characters = name.split(".")
 
@@ -22,8 +21,7 @@ def select_char(name):
 
     return char
 
-
-# Data gathering
+# data gathering
 data = pd.read_csv("dataset.csv")
 
 # data = data[data.columns.drop(list(data.filter(regex='DD')))]
@@ -35,8 +33,8 @@ data = data[data.columns.drop(['sessionIndex', 'rep'])]
 data["subject"] = data["subject"].apply(lambda x: int(x[1:]))
 subjects = data.subject.unique().tolist()
 
-# Create TCP connection
-ctr = 0
+# create TCP connection
+ctr = 0  # clickthrough rate
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
     sock.connect((SERVER, PORT))
@@ -55,10 +53,10 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
 
                 char = select_char(j)
 
-                # print("Sending: " + str(char))
+                print("Sending: " + str(char))
                 sock.send(char.encode())
 
-                # print("Sleeping:" + str(wait_time))
+                print("Sleeping:" + str(wait_time))
                 time.sleep(wait_time)
 
-            # print("\n")
+            print("\n")
