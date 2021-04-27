@@ -11,3 +11,19 @@ Cybercrimes are on the rise today because there is a growing need to increase th
   
 Key Words:
 Remote Authentication, Keystroke Dynamics, Remote Authentication, Typing Biometrics
+
+Installation:
+Install python3 (or venv)
+Install the packages with 
+  pip install -r requirements.txt
+Run the main python file 
+  python main.py
+
+Folders & Files Structure:
+In src/
+  In datasets/ is the used datasets, including the open dataset from Killourhy and Maxion
+  In exports/ are exported graph from scripts and notebooks
+  In network_gns3/ are the scripts to send and receive data, datasets that we generated from our simulations
+  stats_jitter.py & stats_latency.py are the statistics about results
+  Nearest_Neighbor.ipynb & Neural_Network.ipynb are the jupiter/colab notebooks
+  main.py is the main script calling Subject.py and DetectorNearestNeighbor.py & DetectorNeuralNetwork.py
