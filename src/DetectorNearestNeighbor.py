@@ -25,11 +25,11 @@ class DetectorNearestNeighbor:
 
     def distance_user(self):
         score, index = self.nearest_neighbor.kneighbors(self.x_test)
-        # print(score)
+        print(score)
         return score
 
     def distance_impostor(self):
         score, index = self.nearest_neighbor.kneighbors(self.xi_test)
-        # print(score)
+        print(score)
         return score
 
