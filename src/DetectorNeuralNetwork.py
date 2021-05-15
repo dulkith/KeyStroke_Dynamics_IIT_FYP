@@ -2,10 +2,8 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from keras.models import Model
-from keras.layers import Input
+from keras.layers import Dense, Input
 from scipy.spatial import distance
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, LSTM
 
 
 class DetectorNeuralNetwork:
