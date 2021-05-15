@@ -1,4 +1,4 @@
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from keras.models import Model
@@ -39,8 +39,7 @@ class DetectorNeuralNetwork:
         self.neural_network.compile(optimizer=opt, loss='mse')
 
     def fit(self):
-        self.neural_network.fit(
-            self.x_train, self.x_train, epochs=500, verbose=0)
+        self.neural_network.fit(self.x_train, self.x_train, epochs=500, verbose=0)
         self.weights = self.neural_network.get_weights()
 
     def distance_user(self):
