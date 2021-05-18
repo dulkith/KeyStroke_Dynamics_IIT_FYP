@@ -1,9 +1,10 @@
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-from keras.models import Model
-from keras.layers import Dense, Input
 from scipy.spatial import distance
+from keras.layers import Dense, Input
+from keras.models import Model
+from tensorflow.keras import layers
+from tensorflow import keras
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 
 class DetectorNeuralNetwork:
@@ -39,7 +40,8 @@ class DetectorNeuralNetwork:
         self.neural_network.compile(optimizer=opt, loss='mse')
 
     def fit(self):
-        self.neural_network.fit(self.x_train, self.x_train, epochs=500, verbose=0)
+        self.neural_network.fit(
+            self.x_train, self.x_train, epochs=500, verbose=0)
         self.weights = self.neural_network.get_weights()
 
     def distance_user(self):
