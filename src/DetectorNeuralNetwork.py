@@ -1,10 +1,9 @@
-from scipy.spatial import distance
-from keras.layers import Dense, Input
-from keras.models import Model
-from tensorflow.keras import layers
+import tensorflow as tf
 from tensorflow import keras
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
+from tensorflow.keras import layers
+from keras.models import Model
+from keras.layers import Dense, Input
+from scipy.spatial import distance
 
 
 class DetectorNeuralNetwork:
